@@ -4,5 +4,7 @@ node_modules/
 public/bundle.js
 public/images/
 
+.config.js
+
 .eslintcache
 npm-debug.log
