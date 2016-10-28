@@ -5,6 +5,6 @@ import App from './components/App';
 require('./sass/main.scss');
 
 ReactDOM.render(
-  <App message="Hello, world!" />,
+  <App />,
   document.getElementById('app')
 );

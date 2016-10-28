@@ -1,11 +1,8 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import FullPageBackground from './FullPageBackground';
 
-function App({ message }) {
-  return <div className="container">{message}</div>;
+function App() {
+  return <FullPageBackground />;
 }
-
-App.propTypes = {
-  message: PropTypes.string.isRequired,
-};
 
 export default App;

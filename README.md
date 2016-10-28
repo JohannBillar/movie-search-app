@@ -1,13 +1,7 @@
-# React.js Project Boilerplate
- 
-### Quick start a project with:
-* Webpack
-* Babel 6
-* ESLint (extended with airbnb)
-* Jest
-* SASS
-* Much more
+# Re-usable Components
 
+## Movie Trailer Search App
+ 
 ___
 ### Usage:
 * npm install
@@ -16,4 +10,5 @@ ___
 
 ___
 ### TODO
-Create production automation for deployment
+* Create setup express.js server
+* manage API keys though server
