@@ -5,7 +5,7 @@
 
 /// Regular font family
 /// @type List
-$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+$text-font-stack: 'Raleway', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
 
 /// Code (monospace) font family
 /// @type List
@@ -32,6 +32,11 @@ $mid-grey: rgb(153, 153, 153) !default;
 /// @type Color
 $dark-grey: rgb(68, 68, 68) !default;
 
+
+/// App colors
+$background-white-grey: rgb(242, 242, 242);
+$button-blue: rgb(32, 79, 140);
+$button-active: rgb(32, 79, 188);
 
 /// Container's maximum width
 /// @type Length

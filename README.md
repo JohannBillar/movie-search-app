@@ -9,6 +9,7 @@ ___
 * npm test
 
 ___
-### TODO
-* Create setup express.js server
-* manage API keys though server
+### Missing stuff to add...
+* Setup express.js server
+* Manage API calls though node
+* User auth

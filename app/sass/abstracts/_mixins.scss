@@ -28,6 +28,15 @@
   order: $val;
 }
 
+/// transform translate mixin
+@mixin transform-translate($x-val, $y-val) {
+  -webkit-transform: translate($x-val, $y-val);
+  -moz-transform: translate($x-val, $y-val);
+  -ms-transform: translate($x-val, $y-val);
+  -o-transform: translate($x-val, $y-val);
+  transform: translate($x-val, $y-val);
+}
+
 /// Event wrapper
 /// @author Harry Roberts
 /// @param {Bool} $self [false] - Whether or not to include current selector

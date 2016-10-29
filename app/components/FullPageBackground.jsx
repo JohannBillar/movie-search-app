@@ -1,7 +1,8 @@
 import React, { PropTypes, Component } from 'react';
 import Unsplash, { toJson } from 'unsplash-js';
-import defaultImage from '../images/coronado-bridge.jpg';
+import defaultImage from '../images/camera-background.jpg';
 import keyUnsplash from '../../.config';
+import SearchBar from './SearchBar';
 
 const { APP_ID, APP_SECRET, CALLBACK_URL } = keyUnsplash;
 
@@ -57,13 +58,16 @@ class FullPageBackground extends Component {
 
   render() {
     return (
-      <div
-        className="background-image"
-        style={{
-          backgroundImage: `url(${this.state.url})`,
-          height: this.state.windowHeight,
-        }}
-      />
+      <div>
+        <SearchBar />
+        <div
+          className="background-image"
+          style={{
+            backgroundImage: `url(${this.state.url})`,
+            height: this.state.windowHeight,
+          }}
+        />
+      </div>
     );
   }
 }
