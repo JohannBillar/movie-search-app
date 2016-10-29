@@ -1,13 +1,15 @@
-# Re-usable Components
+## **Movie Trailer Search App**
 
-## Movie Trailer Search App
- 
-___
-### Usage:
-* npm install
-* npm start
-* npm test
+### Usage
 
+Install the dependencies/devDependencies, create config file and start the server.
+
+```sh
+$ cd reactjs-components
+$ touch .config.js
+$ npm install
+$ npm start
+```
 ___
 ### Missing stuff to add...
 * Setup express.js server
