@@ -1,8 +1,13 @@
-import React from 'react';
-import FullPageBackground from './FullPageBackground';
+import React, { PropTypes } from 'react';
 
-function App() {
-  return <FullPageBackground />;
+const propTypes = {
+  children: PropTypes.object,
+};
+
+function App(props) {
+  return <div>{props.children}</div>;
 }
+
+App.propTypes = propTypes;
 
 export default App;

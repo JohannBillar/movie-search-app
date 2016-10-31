@@ -6,7 +6,9 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint app",
-    "start": "webpack-dev-server --progress --colors --hot --inline --watch"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:dev": "webpack-dev-server --progress --colors --hot --inline --watch --history-api-fallback",
+    "start:prod": "webpack && node server.js"
   },
   "keywords": [
     "react",
@@ -19,7 +21,9 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.14.0",
+    "compression": "^1.6.2",
     "express": "^4.14.0",
+    "if-env": "^1.0.0",
     "lodash": "^4.16.3",
     "react": "^15.3.2",
     "react-addons-css-transition-group": "^15.3.2",

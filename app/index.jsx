@@ -1,10 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
+import { render } from 'react-dom';
+import routes from './config/routes';
 
-require('./sass/main.scss');
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('app')
-);
+render(routes, document.getElementById('app'));

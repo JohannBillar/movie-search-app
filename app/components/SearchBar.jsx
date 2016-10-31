@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+const contextTypes = {
+  router: React.PropTypes.object.isRequired,
+};
+
 class SearchBar extends Component {
   constructor(props) {
     super(props);
@@ -17,6 +21,8 @@ class SearchBar extends Component {
   handleButtonClick(e) {
     e.preventDefault();
     console.log('button clicked with value: ', this.state.value);
+    const path = '/movies';
+    this.context.router.push(path);
   }
 
   render() {
@@ -41,5 +47,7 @@ class SearchBar extends Component {
     );
   }
 }
+
+SearchBar.contextTypes = contextTypes;
 
 export default SearchBar;

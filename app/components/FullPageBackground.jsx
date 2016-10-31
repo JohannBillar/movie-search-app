@@ -16,6 +16,10 @@ const propTypes = {
   height: PropTypes.string,
 };
 
+const defaultProps = {
+  windowHeight: '100%',
+};
+
 class FullPageBackground extends Component {
   constructor(props) {
     super(props);
@@ -72,10 +76,7 @@ class FullPageBackground extends Component {
   }
 }
 
-FullPageBackground.defaultProps = {
-  windowHeight: '100%',
-};
-
 FullPageBackground.propTypes = propTypes;
+FullPageBackground.defaultProps = defaultProps;
 
 export default FullPageBackground;
