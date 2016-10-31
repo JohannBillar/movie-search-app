@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 
 const contextTypes = {
-  router: React.PropTypes.object.isRequired,
+  router: PropTypes.object.isRequired,
 };
 
 class SearchBar extends Component {

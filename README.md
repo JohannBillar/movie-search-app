@@ -2,7 +2,7 @@
 
 ### Usage
 
-Install the dependencies/devDependencies, create config file and start the server.
+Install the dependencies/devDependencies, create config file with your API keys and start the server.
 
 ```sh
 $ cd reactjs-components
@@ -12,6 +12,6 @@ $ npm start
 ```
 ___
 ### Missing stuff to add...
-* Setup express.js server
+* Build out Express server
 * Manage API calls though node
 * User auth

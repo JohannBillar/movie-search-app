@@ -1,5 +1,5 @@
 {
-  "name": "reactjs-components",
+  "name": "movie-search-app",
   "version": "0.0.1",
   "description": "Re-usable react components for movie search app",
   "main": "index.js",
@@ -60,10 +60,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/JohannBillar/reactjs-components.git"
+    "url": "git://github.com/JohannBillar/movie-search-app.git"
   },
   "bugs": {
-    "url": "https://github.com/JohannBillar/reactjs-components/issues"
+    "url": "https://github.com/JohannBillar/movie-search-apps/issues"
   },
-  "homepage": "https://github.com/JohannBillar/reactjs-components#readme"
+  "homepage": "https://github.com/JohannBillar/movie-search-app#readme"
 }
