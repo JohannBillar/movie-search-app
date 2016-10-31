@@ -5,7 +5,7 @@
 Install the dependencies/devDependencies, create config file with your API keys and start the server.
 
 ```sh
-$ cd reactjs-components
+$ cd movie-search-app
 $ touch .config.js
 $ npm install
 $ npm start
