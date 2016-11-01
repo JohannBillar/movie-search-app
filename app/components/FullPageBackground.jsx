@@ -1,10 +1,10 @@
 import React, { PropTypes, Component } from 'react';
 import Unsplash, { toJson } from 'unsplash-js';
 import defaultImage from '../images/camera-background.jpg';
-import keyUnsplash from '../../.config';
+import APIKeys from '../../.config';
 import SearchBar from './SearchBar';
 
-const { APP_ID, APP_SECRET, CALLBACK_URL } = keyUnsplash;
+const { APP_ID, APP_SECRET, CALLBACK_URL } = APIKeys;
 
 const unsplash = new Unsplash({
   applicationId: APP_ID,
@@ -51,8 +51,9 @@ class FullPageBackground extends Component {
   }
 
   ComponentWillUnmount() {
+    console.log('componentWillUnmount Fired...');
     if (typeof window !== 'undefined') {
-      window.removeEventListener('resize', this.handleWindowResize);
+      window.addEventListener('resize', this.handleWindowResize);
     }
   }
 

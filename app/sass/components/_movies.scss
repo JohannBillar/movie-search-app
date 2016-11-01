@@ -1,0 +1,17 @@
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  & > a {
+    width: 38.198%;
+    height: 0;
+    padding-bottom: 19.8%;
+    overflow: hidden;
+    margin-bottom: 5.574%;
+    border: 2.618px solid $mid-grey;
+    border-radius: 3.82px;
+    color: #333;
+    text-decoration: none;
+  }
+}

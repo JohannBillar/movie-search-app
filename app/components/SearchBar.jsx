@@ -20,15 +20,23 @@ class SearchBar extends Component {
 
   handleButtonClick(e) {
     e.preventDefault();
-    console.log('button clicked with value: ', this.state.value);
+    // console.log('button clicked with value: ', this.state.value);
     const path = '/movies';
-    this.context.router.push(path);
+    this.context.router.push({
+      pathname: path,
+      state: {
+        movieSearchTerm: this.state.value,
+      },
+    });
   }
 
   render() {
     return (
       <div className="search-bar">
-        <form className="search-bar-form">
+        <form
+          className="search-bar-form"
+          onSubmit={this.handleButtonClick}
+        >
           <input
             className="search-bar-input"
             type="search"
@@ -38,7 +46,7 @@ class SearchBar extends Component {
           />
           <button
             className="search-bar-button"
-            onClick={this.handleButtonClick}
+            type="submit"
           >
             Browse
           </button>
