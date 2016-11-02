@@ -58,15 +58,14 @@ class BackgroundContainer extends Component {
       .catch(error => this.setState({ url: defaultImage }));
   }
 
-  ComponentWillUnmount() {
-    console.log('componentWillUnmount invoked...');
+  handleWindowResize() {
+    this.setState({ windowHeight: window.innerHeight });
+  }
+
+  removeWindowResizeEventHandler() {
     if (typeof window !== 'undefined') {
       window.removeEventListener('resize', this.handleWindowResize);
     }
-  }
-
-  handleWindowResize() {
-    this.setState({ windowHeight: window.innerHeight });
   }
 
   handleInputChange(e) {
@@ -76,6 +75,7 @@ class BackgroundContainer extends Component {
   handleFormSubmit(e) {
     e.preventDefault();
     const path = '/movies';
+    this.removeWindowResizeEventHandler();
     this.context.router.push({
       pathname: path,
       state: {
