@@ -1,8 +1,8 @@
 import React from 'react';
-import FullPageBackground from './FullPageBackground';
+import BackgroundContainer from '../containers/BackgroundContainer';
 
 function Home() {
-  return <FullPageBackground />;
+  return <BackgroundContainer />;
 }
 
 export default Home;

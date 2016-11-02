@@ -1,61 +1,36 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes } from 'react';
 
-const contextTypes = {
-  router: PropTypes.object.isRequired,
+const propTypes = {
+  value: PropTypes.string,
+  onFormSubmit: PropTypes.func,
+  onInputChange: PropTypes.func,
 };
 
-class SearchBar extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { value: '' };
-
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleButtonClick = this.handleButtonClick.bind(this);
-  }
-
-  handleInputChange(e) {
-    this.setState({ value: e.target.value });
-  }
-
-  handleButtonClick(e) {
-    e.preventDefault();
-    // console.log('button clicked with value: ', this.state.value);
-    const path = '/movies';
-    this.context.router.push({
-      pathname: path,
-      state: {
-        movieSearchTerm: this.state.value,
-      },
-    });
-  }
-
-  render() {
-    return (
-      <div className="search-bar">
-        <form
-          className="search-bar-form"
-          onSubmit={this.handleButtonClick}
+function SearchBar(props) {
+  return (
+    <div className="search-bar">
+      <form
+        className="search-bar-form"
+        onSubmit={props.onFormSubmit}
+      >
+        <input
+          className="search-bar-input"
+          type="search"
+          onChange={props.onInputChange}
+          value={props.value}
+          placeholder="Search..."
+        />
+        <button
+          className="search-bar-button"
+          type="submit"
         >
-          <input
-            className="search-bar-input"
-            type="search"
-            onChange={this.handleInputChange}
-            value={this.state.value}
-            placeholder="Search..."
-          />
-          <button
-            className="search-bar-button"
-            type="submit"
-          >
-            Browse
-          </button>
-        </form>
-      </div>
-    );
-  }
+          Browse
+        </button>
+      </form>
+    </div>
+  );
 }
 
-SearchBar.contextTypes = contextTypes;
+SearchBar.propTypes = propTypes;
 
 export default SearchBar;
