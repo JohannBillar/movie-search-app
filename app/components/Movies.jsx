@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 import axios from 'axios';
 import MovieCard from './MovieCard';
 import APIKeys from '../../.config';
@@ -21,6 +22,7 @@ class Movies extends Component {
   }
 
   componentWillMount() {
+    console.log('Movies - componentWillMount invoked: ', this.props.location.state.movieSearchTerm);
     this.fetchMoviesData(this.props.location.state.movieSearchTerm);
   }
 
@@ -34,9 +36,12 @@ class Movies extends Component {
   }
 
   render() {
+    const backButton = <Link to="/" className="back-button">Back</Link>;
+    const header = this.props.location.state.movieSearchTerm;
     return (
       <div className="container">
-        <h1 className="movies-header">Header</h1>
+        {backButton}
+        <h1 className="movies-header">Results for {header}</h1>
         <div className="movies">
           {this.state.movies.map(movie => (
             <MovieCard key={movie.id} {...movie} />

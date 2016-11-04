@@ -5,13 +5,13 @@ const propTypes = {
   windowHeight: PropTypes.number,
 };
 
-function FullPageBackground(props) {
+function FullPageBackground({ url, windowHeight }) {
   return (
     <div
       className="background-image"
       style={{
-        backgroundImage: `url(${props.url})`,
-        height: props.windowHeight,
+        backgroundImage: `url(${url})`,
+        height: windowHeight,
       }}
     />
   );

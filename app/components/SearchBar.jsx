@@ -19,6 +19,7 @@ function SearchBar(props) {
           onChange={props.onInputChange}
           value={props.value}
           placeholder="Search..."
+          autoFocus
         />
         <button
           className="search-bar-button"

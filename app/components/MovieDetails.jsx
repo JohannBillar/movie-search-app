@@ -21,7 +21,6 @@ class MovieDetailsPage extends Component {
       .catch(error => console.log('axios get error is: ', error));
   }
 
-
   render() {
     console.log(this.state.trailer);
     return (

@@ -74,14 +74,15 @@ class BackgroundContainer extends Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
-    const path = '/movies';
-    this.removeWindowResizeEventHandler();
-    this.context.router.push({
-      pathname: path,
-      state: {
-        movieSearchTerm: this.state.inputValue,
-      },
-    });
+    if (this.state.inputValue) {
+      this.removeWindowResizeEventHandler();
+      this.context.router.push({
+        pathname: '/movies',
+        state: {
+          movieSearchTerm: this.state.inputValue,
+        },
+      });
+    }
   }
 
   render() {
