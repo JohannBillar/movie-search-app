@@ -7,6 +7,7 @@ const propTypes = {
   title: PropTypes.string,
   release_date: PropTypes.string,
   overview: PropTypes.string,
+  id: PropTypes.number,
 };
 
 function MovieCard(movie) {

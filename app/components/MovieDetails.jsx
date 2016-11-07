@@ -1,38 +1,44 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import axios from 'axios';
 import APIKeys from '../../.config';
+import TrailerList from './TrailerList';
 
 const { key } = APIKeys;
+
+const propTypes = {
+  params: PropTypes.object,
+};
 
 class MovieDetailsPage extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      trailer: {},
+      trailers: [],
+      trailersFound: false,
     };
   }
 
   componentWillMount() {
     axios.get(`http://api.themoviedb.org/3/movie/${this.props.params.id}/videos?api_key=${key}`)
       .then(response => this.setState({
-        trailer: response.data.results[1].key ? response.data.results[1].key : {},
+        trailers: response.data.results.length > 0 ? response.data.results : [],
+        trailersFound: response.data.results.length > 0,
       }))
-      .catch(error => console.log('axios get error is: ', error));
+      .catch(error => this.setState({
+        trailersFound: error.response.status !== 404,
+      }));
   }
 
   render() {
-    console.log(this.state.trailer);
-    return (
-      <div className="trailer-container">
-        <iframe src={`https://www.youtube-nocookie.com/embed/${this.state.trailer}?rel=0&amp;controls=0&amp;showinfo=0`} frameBorder="0" allowFullScreen />
-      </div>
-    );
+    if (this.state.trailersFound) {
+      return <TrailerList trailers={this.state.trailers} />;
+    } else {
+      return <div>No movie trailer found...</div>;
+    }
   }
 }
 
-MovieDetailsPage.propTypes = {
-  params: React.PropTypes.func,
-};
+MovieDetailsPage.propTypes = propTypes;
 
 export default MovieDetailsPage;

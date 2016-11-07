@@ -35,7 +35,6 @@ class BackgroundContainer extends Component {
       windowHeight: props.height,
       inputValue: '',
       movies: [],
-      // pages: 1,
     };
 
     this.handleWindowResize = this.handleWindowResize.bind(this);
@@ -91,14 +90,14 @@ class BackgroundContainer extends Component {
     axios.get(`${url}${movieSearch}`)
       .then(response => this.setState({
         movies: response.data.results,
-        // pages: response.data.total_pages,
       }))
-      .catch(error => console.log('axios get error is: ', error));
+      .catch(error => console.log('axios get error is: ', error.response));
   }
 
   handleFormSubmit(e) {
     e.preventDefault();
     this.fetchMoviesData(this.state.inputValue);
+    this.removeWindowResizeEventHandler();
   }
 
   render() {
