@@ -1,0 +1,9 @@
+.trailers {
+  @include flexbox();
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.trailers li {
+  margin-top: 3.82%;
+}

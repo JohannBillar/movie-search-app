@@ -13,7 +13,14 @@ function TrailerList({ trailers }) {
     />
     )
   );
-  return <ul>{movieTrailer}</ul>;
+
+  return (
+    <div className="container">
+      <div className="trailers">
+        <ul>{movieTrailer}</ul>
+      </div>
+    </div>
+  );
 }
 
 TrailerList.propTypes = propTypes;

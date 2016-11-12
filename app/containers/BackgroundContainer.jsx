@@ -66,7 +66,7 @@ class BackgroundContainer extends Component {
   }
 
   getRandomImage() {
-    unsplash.photos.getRandomPhoto({ width: 300, query: 'movie' })
+    unsplash.photos.getRandomPhoto({ width: 10, query: 'movie' })
       .then(toJson)
       .then(response => this.setState({ url: response.urls.full }))
       .catch(error => this.setState({ url: defaultImage }));

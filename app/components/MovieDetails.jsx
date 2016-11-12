@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import axios from 'axios';
 import APIKeys from '../../.config';
 import TrailerList from './TrailerList';
+import BackButton from './BackButton';
 
 const { key } = APIKeys;
 
@@ -31,8 +32,14 @@ class MovieDetailsPage extends Component {
   }
 
   render() {
+    console.log(this.props);
     if (this.state.trailersFound) {
-      return <TrailerList trailers={this.state.trailers} />;
+      return (
+        <div>
+          <BackButton path="/" />
+          <TrailerList trailers={this.state.trailers} />
+        </div>
+      );
     } else {
       return <div>No movie trailer found...</div>;
     }

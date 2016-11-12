@@ -1,19 +1,18 @@
 import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
 import MovieCard from './MovieCard';
+import BackButton from './BackButton';
 
 const propTypes = {
   location: PropTypes.object.isRequired,
 };
 
 function Movies(props) {
+  console.log('Movies component: ', props.location.state);
   const params = props.location.state || {};
   const { movies, term } = params;
-  const backButton = <Link to="/" className="back-button">Back</Link>;
-
   return (
     <div className="container">
-      {backButton}
+      <BackButton path="/" />
       <h1 className="movies-header">Results for {term}</h1>
       <div className="movies">
         {movies.map(movie => (

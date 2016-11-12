@@ -1,7 +1,7 @@
 .movies {
-  display: flex;
+  @include flexbox();
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
   & > a {
     width: 38.198%;

@@ -4,6 +4,7 @@ import App from '../components/App';
 import Home from '../components/Home';
 import Movies from '../components/Movies';
 import MovieDetails from '../components/MovieDetails';
+import NotFound from '../components/NotFound';
 
 require('../sass/main.scss');
 
@@ -13,6 +14,7 @@ const routes = (
       <IndexRoute component={Home} />
       <Route path="movies" component={Movies} />
       <Route path="movie_details/:id" component={MovieDetails} />
+      <Route path="*" component={NotFound} />
     </Route>
   </Router>
 );
